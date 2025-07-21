@@ -1,4 +1,4 @@
-package lifecycle;
+package com.grocery.inventory.lifecycle;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;

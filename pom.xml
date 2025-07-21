@@ -7,8 +7,52 @@
 
     <groupId>com.grocery.inventory</groupId>
     <artifactId>InventoryNotificationSystem</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
+    <name>InventoryNotificationSystem</name>
+    <description>Spring Boot Inventory Notification System</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Web Starter (includes Spring MVC) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Jakarta Annotations for @PostConstruct and @PreDestroy -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven Plugin to package executable jar -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- ========================== -->
+    <!-- ORIGINAL CONFIG BELOW     -->
+    <!-- ========================== -->
+
+    <!--
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -19,7 +63,11 @@
             <artifactId>spring-context</artifactId>
             <version>6.1.3</version>
         </dependency>
-        <!-- Jakarta Annotations for @PostConstruct and @PreDestroy -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>6.1.3</version>
+        </dependency>
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
@@ -33,6 +81,7 @@
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
+
     <build>
         <plugins>
             <plugin>
@@ -57,5 +106,6 @@
             </plugin>
         </plugins>
     </build>
+    -->
 
 </project>
