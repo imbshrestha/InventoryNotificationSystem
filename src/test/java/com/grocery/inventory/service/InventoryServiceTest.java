@@ -8,11 +8,12 @@ import static org.mockito.Mockito.*;
 public class InventoryServiceTest {
 
     private InventoryService inventoryService;
+    private NotificationService notificationService;
 
     @BeforeEach
     void setUp() {
-        NotificationService mockNotificationService = mock(NotificationService.class);
-        inventoryService = new InventoryService(mockNotificationService);
+        notificationService = mock(NotificationService.class);
+        inventoryService = new InventoryService(notificationService);
         inventoryService.initializeInventory(); // Make sure this method exists
     }
 
@@ -32,6 +33,13 @@ public class InventoryServiceTest {
     void checkItemAvailable() {
         String result = inventoryService.checkInventoryAPI("Lentils", 10);
         assertEquals("✅ Lentils inventory is sufficient.", result);
+    }
+
+    @Test
+    void lowStockTriggersNotification() {
+        inventoryService.checkInventory("Basmati Rice", 15);
+        verify(notificationService, times(1))
+                .sendLowStockAlert("Basmati Rice", 10);
     }
 
 }
