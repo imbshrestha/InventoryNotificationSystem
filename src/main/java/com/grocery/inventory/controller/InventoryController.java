@@ -1,4 +1,4 @@
-package controller;
+package com.grocery.inventory.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

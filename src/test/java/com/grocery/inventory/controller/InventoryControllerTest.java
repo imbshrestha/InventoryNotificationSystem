@@ -2,7 +2,7 @@ package com.grocery.inventory.controller;
 
 
 import com.grocery.inventory.service.InventoryService;
-import controller.InventoryController;
+import com.grocery.inventory.controller.InventoryController;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
